@@ -1,6 +1,6 @@
-# engined-messenger-aws
+# engined-notification-aws
 
-Local messenger use aws sns backend for engined.
+Local notification use aws sns backend for engined.
 
 
 ## Installation
@@ -8,23 +8,23 @@ Local messenger use aws sns backend for engined.
 Install via NPM:
 
 ```shell
-npm install engined-messenger-aws
+npm install engined-notification-aws
 ```
 
 ## Usage
 
-Start engined-messenger-aws service in engined, see example below:
+Start engined-notification-aws service in engined, see example below:
 
 ```javascript
 const { Manager } = require('engined');
-const MessengerService = require('engined-messenger');
-const LocalMessengerService = require('engined-messenger-aws');
+const NotificationService = require('engined-notification');
+const LocalNotificationService = require('engined-notification-aws');
 
-const messenger = MessengerService();
-const localMessenger = LocalMessengerService({
-	accessKeyId: config.get('messenger').aws.accessKeyId,
-	secretAccessKey: config.get('messenger').aws.secretAccessKey,
-	region: config.get('messenger').aws.region
+const notification = NotificationService();
+const localNotification = LocalNotificationService({
+	accessKeyId: config.get('notification').aws.accessKeyId,
+	secretAccessKey: config.get('notification').aws.secretAccessKey,
+	region: config.get('notification').aws.region
 });
 
 const main = async () => {
@@ -33,8 +33,8 @@ const main = async () => {
 	let serviceManager = new Manager({ verbose: true });
 
 	// Adding service to manager
-	serviceManager.add('Messenger', messenger);
-	serviceManager.add('LocalMessenger', localMessenger);
+	serviceManager.add('Notification', notification);
+	serviceManager.add('LocalNotification', localNotification);
 
 	// Start all services
 	await serviceManager.startAll();
@@ -43,17 +43,17 @@ const main = async () => {
 main();
 ```
 
-## Send message with local messenger backend
+## Send notification with local notification backend
 
-The example to show how to send message with local messenger backend:
+The example to show how to send notification with local notification backend:
 
 ```javascript
 
-// Using local messenger backend
-let localAgent = this.getContext().get('Messenger').getAgent('default');
+// Using local notification backend
+let localAgent = this.getContext().get('Notification').getAgent('default');
 
-// Send Message to user app
-localAgent.sendMessageToApp(arn, token, msg, badge)
+// Send Notification to user app
+localAgent.sendNotificationToApp(arn, token, msg, badge)
 ```
 
 ## License
