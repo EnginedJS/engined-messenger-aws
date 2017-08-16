@@ -1,7 +1,7 @@
 {
-  "name": "engined-messenger-aws",
+  "name": "engined-notification-aws",
   "version": "0.0.1",
-  "description": "Local messenger use aws sns backend for engined.",
+  "description": "Local notification use aws sns backend for engined.",
   "main": "index.js",
   "directories": {
     "lib": "lib"
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EnginedJS/engined-messenger-aws.git"
+    "url": "git+https://github.com/EnginedJS/engined-notification-aws.git"
   },
   "author": "Leon Lin <leonlin14@gmail.com>",
   "license": "MIT",
@@ -22,13 +22,12 @@
     "service",
     "engined",
     "aws",
-    "messenger",
-    "message"
+    "notification"
   ],
   "bugs": {
-    "url": "https://github.com/EnginedJS/engined-messenger-aws/issues"
+    "url": "https://github.com/EnginedJS/engined-notification-aws/issues"
   },
-  "homepage": "https://github.com/EnginedJS/engined-messenger-aws#readme",
+  "homepage": "https://github.com/EnginedJS/engined-notification-aws#readme",
   "dependencies": {
     "engined": ">=0.0.2",
     "aws-sdk": "^2.97.0"

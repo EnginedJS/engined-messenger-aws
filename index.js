@@ -7,7 +7,7 @@ module.exports = (opts = {}) => class extends Service {
 		super(context);
 
 		this.dependencies = [
-			'Messenger'
+			'Notification'
 		];
 		this.agentName = opts.agentName;
 		this.options = opts;
@@ -15,15 +15,15 @@ module.exports = (opts = {}) => class extends Service {
 
 	async start() {
 
-		let messageManager = this.getContext().get('Messenger');
+		let notificationManager = this.getContext().get('Notification');
 
 		let agent = new Agent(this.options);
 
-		messageManager.register(this.agentName, agent);
+		notificationManager.register(this.agentName, agent);
 	}
 
 	async stop() {
 
-		messageManager.unregister(this.agentName);
+		notificationManager.unregister(this.agentName);
 	}
 }
