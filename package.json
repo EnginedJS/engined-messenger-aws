@@ -1,0 +1,36 @@
+{
+  "name": "engined-messenger-aws",
+  "version": "0.0.1",
+  "description": "Local messenger use aws sns backend for engined.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EnginedJS/engined-messenger-aws.git"
+  },
+  "author": "Leon Lin <leonlin14@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=7.4"
+  },
+  "keywords": [
+    "service",
+    "engined",
+    "aws",
+    "messenger",
+    "message"
+  ],
+  "bugs": {
+    "url": "https://github.com/EnginedJS/engined-messenger-aws/issues"
+  },
+  "homepage": "https://github.com/EnginedJS/engined-messenger-aws#readme",
+  "dependencies": {
+    "engined": ">=0.0.2",
+    "aws-sdk": "^2.97.0"
+  }
+}
