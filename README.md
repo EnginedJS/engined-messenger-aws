@@ -22,13 +22,9 @@ const LocalMessengerService = require('engined-messenger-aws');
 
 const messenger = MessengerService();
 const localMessenger = LocalMessengerService({
-	type: 'OAuth2',
-	user: config.get('messenger').auth.user,
-	pass: config.get('messenger').auth.pass,
-	clientId: config.get('messenger').auth.clientId,
-	clientSecret: config.get('messenger').auth.clientSecret,
-	refreshToken: config.get('messenger').auth.refreshToken,
-	accessToken: config.get('messenger').auth.accessToken
+	accessKeyId: config.get('messenger').aws.accessKeyId,
+	secretAccessKey: config.get('messenger').aws.secretAccessKey,
+    region: config.get('messenger').aws.region
 });
 
 const main = async () => {
