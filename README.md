@@ -24,7 +24,7 @@ const messenger = MessengerService();
 const localMessenger = LocalMessengerService({
 	accessKeyId: config.get('messenger').aws.accessKeyId,
 	secretAccessKey: config.get('messenger').aws.secretAccessKey,
-    region: config.get('messenger').aws.region
+	region: config.get('messenger').aws.region
 });
 
 const main = async () => {
