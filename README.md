@@ -52,8 +52,17 @@ The example to show how to send notification with local notification backend:
 // Using local notification backend
 let localAgent = this.getContext().get('Notification').getAgent('default');
 
+conditions = {
+	aps: {
+		alert: msg,
+		sound: 'default',
+		badge: 1
+	},
+	otherparams: value
+}
+
 // Send Notification to user app
-localAgent.sendNotificationToApp(arn, token, msg, badge)
+localAgent.sendNotificationToApp(arn, token, conditions)
 ```
 
 ## License
