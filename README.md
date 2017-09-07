@@ -52,17 +52,30 @@ The example to show how to send notification with local notification backend:
 // Using local notification backend
 let localAgent = this.getContext().get('Notification').getAgent('default');
 
-conditions = {
-	aps: {
-		alert: msg,
-		sound: 'default',
-		badge: 1
-	},
-	otherparams: value
+payload = {
+	default: 'This is the default message which must be present when publishing a message to a topic. The default message will only be used if a message is not present for one of the notification platforms.',     
+	APNS: JSON.stringify({
+		aps: {
+			alert: 'Check out these awesome deals!',
+			url: 'www.amazon.com'
+		}
+	}),
+	GCM: JSON.stringify({
+		data: {
+			message: 'Check out these awesome deals!',
+			url: 'www.amazon.com'
+		}
+	}),
+	ADM: JSON.stringify({
+		data: {
+			message: 'Check out these awesome deals!',
+			url: 'www.amazon.com'
+		}
+	})
 }
 
 // Send Notification to user app
-localAgent.sendNotificationToApp(arn, token, conditions)
+localAgent.sendNotificationToApp(arn, token, payload)
 ```
 
 ## License
