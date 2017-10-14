@@ -24,6 +24,8 @@ module.exports = (opts = {}) => class extends Service {
 
 	async stop() {
 
+		let notificationManager = this.getContext().get('Notification');
+
 		notificationManager.unregister(this.agentName);
 	}
 }
